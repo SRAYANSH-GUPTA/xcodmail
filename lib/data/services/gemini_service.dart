@@ -36,26 +36,50 @@ class GeminiService {
       final url = Uri.parse('$_baseUrl/models/$_model:generateContent?key=$apiKey');
 
       final prompt = '''
-Please analyze this PDF document and generate a personalized cold outreach email. 
+Prompt:
 
-The PDF contains information about a potential client, company, or business opportunity. Based on the content, create a compelling cold email that:
+I am applying for a job and want you to write a highly persuasive cold email to a recruiter. I’ve uploaded my resume, and the company I’m targeting is [Company Name] — please research what the company does and tailor the email accordingly.
 
-1. **Personalization**: References specific details from the PDF to show you've done your research
-2. **Value Proposition**: Clearly articulates what value you can provide
-3. **Call to Action**: Includes a specific, actionable next step
-4. **Professional Tone**: Maintains a professional yet approachable tone
-5. **Concise**: Keeps the email under 150 words for better engagement
+Instructions:
 
-Please structure the email with:
-- A compelling subject line
-- Personalized opening that references the PDF content
-- Clear value proposition
-- Specific call to action
-- Professional closing
+Extract my name, LinkedIn profile, and phone number from the resume and include them in the email.
 
-Format the response as a complete email ready to send, including the subject line.
+Highlight my experience, projects, and skills from the resume.
 
-Focus on creating genuine value and building a relationship rather than just selling.
+Clearly show how my background would be valuable to [Company Name] based on their current work, mission, or products.
+
+Emphasize that I’m:
+
+hardworking
+
+a great team player
+
+actively seeking new opportunities
+
+Use a friendly, confident, and professional tone.
+
+Include a clear call to action (e.g., open to chat, consider me for roles now or in the future).
+
+Assume the resume is attached to the email.
+
+Format the output like this:
+
+Subject:
+Quick hello & interest in opportunities at [Company Name]
+
+Body:
+Hi,
+
+[Write the body of the persuasive cold email here...]
+
+Thanks,
+[My Name from resume]
+[LinkedIn link from resume]
+[Phone number from resume]
+
+Please go ahead and analyze the resume now and generate the cold email.
+
+
 ''';
 
       final response = await http.post(

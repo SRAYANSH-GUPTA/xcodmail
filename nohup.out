@@ -1,0 +1,15 @@
+
+(cursor:26096): Gtk-WARNING **: 11:39:42.190: Theme parsing error: gtk.css:6691:68: Invalid name of pseudo-class
+
+(cursor:26096): Gtk-WARNING **: 11:39:42.521: Theme parsing error: gtk-dark.css:6691:68: Invalid name of pseudo-class
+[90m[main 2025-06-19T06:09:42.931Z][0m updateURL https://api2.cursor.sh/updates/api/update/linux-x64/cursor/1.0.0/1918b0c76b97a053efa82a415d87f53ca42ac45d496da3412e99881a2d972751/stable
+[90m[main 2025-06-19T06:09:42.932Z][0m update#setState idle
+[26155:0619/113944.507150:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[91m[main 2025-06-19T06:09:44.770Z][0m vscode-file: Refused to load resource /tmp/.mount_cursor2DVJNi/usr/share/cursor/resources/app/extensions/theme-seti/icons/seti.woff from vscode-file: protocol (original URL: vscode-file://vscode-app/tmp/.mount_cursor2DVJNi/usr/share/cursor/resources/app/extensions/theme-seti/icons/seti.woff)
+[90m[main 2025-06-19T06:10:12.943Z][0m update#setState checking for updates
+[90m[main 2025-06-19T06:10:13.204Z][0m update#setState ready
+[26155:0619/114157.786347:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[26155:0619/114220.293943:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[93m[main 2025-06-19T06:15:48.041Z][0m No ptyHost heartbeat after 6 seconds
+[93m[main 2025-06-19T06:19:28.140Z][0m No ptyHost heartbeat after 6 seconds
+[93m[main 2025-06-19T06:21:52.108Z][0m No ptyHost heartbeat after 6 seconds

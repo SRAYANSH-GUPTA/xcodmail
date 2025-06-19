@@ -3,7 +3,7 @@ class AppConstants {
   static const String appVersion = '1.0.0';
   
   // Gemini API
-  static const String geminiApiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+  static const String geminiApiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
   
   // Gmail
   static const String gmailScheme = 'mailto';

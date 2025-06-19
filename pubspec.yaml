@@ -39,7 +39,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   
   # Dependency Injection
-  get_it: ^7.7.0
+  get_it: ^8.0.3
   
   # Environment Variables
   flutter_dotenv: ^5.1.0
@@ -48,14 +48,14 @@ dependencies:
   http: ^1.4.0
   
   # PDF Parsing and Viewing
-  syncfusion_flutter_pdf: ^24.2.9
-  syncfusion_flutter_pdfviewer: ^24.2.9
+  syncfusion_flutter_pdf: ^29.2.11
+  syncfusion_flutter_pdfviewer: ^29.2.11
   
   # URL Launcher for Gmail
   url_launcher: ^6.2.5
   
   # File Picker
-  file_picker: ^8.0.0+1
+  file_picker: ^10.2.0
   
   # UI Enhancements
   google_fonts: ^6.2.1
@@ -69,7 +69,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

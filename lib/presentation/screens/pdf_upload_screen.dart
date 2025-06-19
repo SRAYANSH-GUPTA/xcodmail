@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../data/services/pdf_service.dart';
 import '../../data/services/gemini_service.dart';
+import 'dart:developer' as dev;
 
 class PdfUploadScreen extends StatefulWidget {
   const PdfUploadScreen({super.key});
@@ -31,17 +32,19 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
         type: FileType.custom,
         allowedExtensions: ['pdf'],
         allowMultiple: false,
+        withData: true,
       );
 
       if (result != null) {
         setState(() {
           _selectedFile = result.files.first;
+          dev.log('Selected file: ${_selectedFile?.name}');
           _isLoading = false;
           _generatedEmail = null;
           _keyInfo = null;
         });
         
-        // Extract text from PDF and generate email
+      
         await _processPdf();
       } else {
         setState(() {
@@ -65,12 +68,13 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
       });
       
       // Extract text from PDF
-      final String extractedText = await PdfService.extractTextFromPdf(_selectedFile!);
+      dev.log('Processing PDF: ${_selectedFile?.name}');
+      // final String extractedText = await PdfService.extractTextFromPdf(_selectedFile!);
       
-      setState(() {
-        _pdfText = extractedText;
-        _isLoading = false;
-      });
+        setState(() {
+          // _pdfText = extractedText;
+          _isLoading = false;
+        });
 
       // Generate cold email using Gemini API
       await _generateColdEmail();
@@ -92,13 +96,14 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
       });
       
       // Extract key information first
-      final keyInfo = await GeminiService.extractKeyInfo(_selectedFile!);
+      // final keyInfo = await GeminiService.extractKeyInfo(_selectedFile!);
+      // dev.log('Key info: $keyInfo');
       
       // Generate cold email
       final generatedEmail = await GeminiService.generateColdEmail(_selectedFile!);
       
       setState(() {
-        _keyInfo = keyInfo;
+        // _keyInfo = keyInfo;
         _generatedEmail = generatedEmail;
         _isGeneratingEmail = false;
       });
@@ -107,6 +112,7 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
       setState(() {
         _isGeneratingEmail = false;
       });
+      dev.log('Error generating email in pdf_upload_screen: $e');
       _showErrorSnackBar('Error generating email: $e');
     }
   }

@@ -15,3 +15,6 @@
 [93m[main 2025-06-19T06:21:52.108Z][0m No ptyHost heartbeat after 6 seconds
 [93m[main 2025-06-19T06:28:53.320Z][0m No ptyHost heartbeat after 6 seconds
 [93m[main 2025-06-19T06:32:02.486Z][0m No ptyHost heartbeat after 6 seconds
+[26096:0619/121815.318139:ERROR:atom_cache.cc(229)] Add WM_CHANGE_STATE to kAtomsToCache
+[26096:0619/121957.293293:ERROR:browser_main_loop.cc(278)] GLib-GObject: ../glib/gobject/gsignal.c:2699: instance '0x3ec405205980' has no handler with id '2400'
+[26096:0619/122001.951623:ERROR:browser_main_loop.cc(278)] GLib-GObject: ../glib/gobject/gsignal.c:2699: instance '0x3ec405205640' has no handler with id '2711'

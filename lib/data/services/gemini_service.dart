@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:file_picker/file_picker.dart';
+import 'dart:developer' as dev;
+import 'dart:typed_data';
 
 class GeminiService {
   static const String _baseUrl = 'https://generativelanguage.googleapis.com/v1beta';
@@ -15,7 +17,9 @@ class GeminiService {
       if (apiKey == null) {
         throw Exception('GEMINI_API_KEY not found in environment variables');
       }
-
+      dev.log('pdfFile: $pdfFile');
+       Uint8List fileBytes = pdfFile.bytes ?? Uint8List(0);
+      dev.log('Uint8List: $fileBytes');
       // Validate file
       if (pdfFile.bytes == null) {
         throw Exception('PDF file bytes are null');
@@ -138,6 +142,11 @@ Focus on creating genuine value and building a relationship rather than just sel
         throw Exception('GEMINI_API_KEY not found in environment variables');
       }
 
+      // Validate file
+      if (pdfFile.bytes == null) {
+        throw Exception('PDF file bytes are null');
+      }
+
       final base64Pdf = base64Encode(pdfFile.bytes!);
       final url = Uri.parse('$_baseUrl/models/$_model:generateContent?key=$apiKey');
 
@@ -189,7 +198,21 @@ Only include information that is explicitly mentioned in the document. If inform
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
+        
+        // Check if candidates exist and are not empty
+        if (data['candidates'] == null || data['candidates'].isEmpty) {
+          throw Exception('No candidates found in AI response');
+        }
+        
         final candidate = data['candidates'][0];
+        
+        // Check if candidate has the required structure
+        if (candidate['content'] == null ||
+            candidate['content']['parts'] == null ||
+            candidate['content']['parts'].isEmpty) {
+          throw Exception('Invalid response structure from AI');
+        }
+        
         final responseText = candidate['content']['parts'][0]['text'] ?? '{}';
         
         // Try to parse JSON response
@@ -197,11 +220,21 @@ Only include information that is explicitly mentioned in the document. If inform
           final Map<String, dynamic> jsonData = jsonDecode(responseText);
           return Map<String, String>.from(jsonData);
         } catch (e) {
-          // If JSON parsing fails, return empty map
-          return {};
+          // If JSON parsing fails, return default map with "Not specified" values
+          return {
+            'company_name': 'Not specified',
+            'contact_person': 'Not specified',
+            'industry': 'Not specified',
+            'pain_points': 'Not specified',
+            'opportunities': 'Not specified',
+            'recent_news': 'Not specified',
+            'company_size': 'Not specified',
+            'location': 'Not specified',
+          };
         }
       } else {
-        throw Exception('Failed to extract key information');
+        final errorData = jsonDecode(response.body);
+        throw Exception('API Error: ${errorData['error']?['message'] ?? 'Unknown error'}');
       }
     } catch (e) {
       throw Exception('Failed to extract key information: $e');

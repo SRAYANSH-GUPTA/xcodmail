@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'presentation/screens/pdf_upload_screen.dart';
 
-void main() {
+void main() async {
+  // Load environment variables before running the app
+  await dotenv.load(fileName: ".env");
+  
   runApp(const MyApp());
 }
 

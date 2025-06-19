@@ -6,6 +6,7 @@ import '../models/gemini_request_model.dart' as request;
 import '../models/gemini_response_model.dart' as response;
 import '../../domain/entities/generated_email.dart';
 import '../../domain/entities/resume.dart';
+import 'dart:developer' as dev;
 
 class GeminiDataSource {
   Future<GeneratedEmail> generateColdEmail({
@@ -59,6 +60,7 @@ class GeminiDataSource {
         throw Exception('Failed to generate email: ${httpResponse.statusCode}');
       }
     } catch (e) {
+      dev.log('Error generating email in gemini_datasource:  $e');
       throw Exception('Error generating email: $e');
     }
   }

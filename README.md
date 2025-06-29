@@ -1,120 +1,178 @@
-# ColdMail - AI-Powered Cold Outreach Email Generator
+# ColdMail - AI-Powered Cold Email Generator
 
-A privacy-focused Flutter app that generates personalized cold outreach emails using Gemini API. Upload a PDF document and let AI create compelling, personalized cold emails for your business outreach.
+A privacy-focused Flutter app that generates personalized cold outreach emails using Gemini API. Upload your resume and let AI create compelling, tailored emails for your job applications.
 
-## Features
+## ✨ Features
 
-- 📄 **PDF Upload**: Upload PDF documents containing client/company information
-- 🤖 **AI-Powered Analysis**: Uses Google's Gemini API to analyze PDF content
-- ✉️ **Personalized Emails**: Generates tailored cold outreach emails based on PDF content
-- 🔍 **Key Information Extraction**: Automatically extracts relevant business information
-- 📧 **Gmail Integration**: Direct integration with Gmail for easy email composition
-- 🎨 **Modern UI**: Beautiful, intuitive interface with Material Design 3
-- 🔒 **Privacy Focused**: Your data stays private and secure
+### 🎯 **Enhanced Email Generation**
+- **Company-Specific Targeting**: Enter company name and position for highly personalized emails
+- **Two Template Types**:
+  - **General**: Suitable for all companies with broad appeal
+  - **Curated**: Specifically tailored with detailed company research and deep personalization
+- **Technical Position Support**: Comprehensive dropdown with 40+ technical positions
+- **Custom Position Input**: Add your own position if not in the predefined list
 
-## Setup Instructions
+### 🤖 **AI-Powered Intelligence**
+- **Company Research**: AI automatically researches target companies to understand their business, technology stack, recent news, and culture
+- **Resume Analysis**: Extracts key information from your PDF resume including skills, experience, and achievements
+- **Smart Personalization**: Creates compelling connections between your background and company needs
+- **Professional Tone**: Generates confident, enthusiastic, and professional emails
 
-### 1. Prerequisites
+### 💾 **Template Management**
+- **Local Storage**: All templates are saved locally on your device for privacy
+- **Template Library**: Access all your saved templates with company and position details
+- **Filter by Type**: Filter templates by General or Curated type
+- **Direct Gmail Integration**: One-click to open any template directly in Gmail
+- **Template Deletion**: Remove individual templates or clear all at once
 
+### 🔒 **Privacy & Security**
+- **Local Storage**: All data stays on your device
+- **No Cloud Storage**: Your resume and templates are never uploaded to external servers
+- **Secure API Calls**: Only resume content is sent to Gemini API for analysis
+
+### 📱 **User Experience**
+- **Modern UI**: Beautiful, intuitive interface with Google Material Design
+- **Real-time Validation**: Form validation ensures all required fields are completed
+- **Loading States**: Clear feedback during PDF processing and email generation
+- **Error Handling**: Comprehensive error messages and recovery options
+
+## 🚀 Getting Started
+
+### Prerequisites
 - Flutter SDK (3.6.1 or higher)
 - Dart SDK
-- Android Studio / VS Code
 - Gemini API Key
 
-### 2. Get Gemini API Key
+### Installation
 
-1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Sign in with your Google account
-3. Create a new API key
-4. Copy the API key for the next step
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd coldmail
+   ```
 
-### 3. Configure Environment Variables
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
 
-1. Create a `.env` file in the root directory of the project
-2. Add your Gemini API key:
+3. **Set up environment variables**
+   - Create a `.env` file in the root directory
+   - Add your Gemini API key:
+     ```
+     GEMINI_API_KEY=your_api_key_here
+     ```
 
-```env
-GEMINI_API_KEY=your_actual_api_key_here
-```
+4. **Run the app**
+   ```bash
+   flutter run
+   ```
 
-**Important**: Never commit your `.env` file to version control. It's already added to `.gitignore`.
+## 📖 How to Use
 
-### 4. Install Dependencies
+### 1. **Enter Job Details**
+- **Company Name**: Enter the target company name
+- **Position**: Select from 40+ technical positions or enter a custom position
+- **Template Type**: Choose between General or Curated templates
 
-```bash
-flutter pub get
-```
+### 2. **Upload Resume**
+- Tap the upload area to select your PDF resume
+- The app will process and analyze your resume
 
-### 5. Run the Application
+### 3. **Generate Email**
+- Click "Generate Email" to create a personalized cold email
+- The AI will research the company and tailor the email to your background
 
-```bash
-flutter run
-```
+### 4. **Save & Use**
+- **Copy Email**: Copy the generated content to clipboard
+- **Open in Gmail**: Directly open the email in Gmail with pre-filled content
+- **Save Template**: Save the template for future use
 
-## How to Use
+### 5. **Manage Templates**
+- Access saved templates via the history icon in the app bar
+- Filter templates by type (General/Curated)
+- Open any template directly in Gmail
+- Delete individual templates or clear all
 
-1. **Upload PDF**: Tap the upload area to select a PDF file containing information about your target client or company
-2. **AI Analysis**: The app will automatically analyze the PDF and extract key information
-3. **Email Generation**: AI generates a personalized cold outreach email based on the PDF content
-4. **Review & Send**: Review the generated email and click "Open in Gmail" to compose and send
+## 🛠 Technical Stack
 
-## Project Structure
+- **Framework**: Flutter 3.6.1+
+- **Language**: Dart
+- **AI Service**: Google Gemini API
+- **Local Storage**: SharedPreferences
+- **File Handling**: File Picker
+- **UI**: Material Design with Google Fonts
+- **URL Handling**: URL Launcher
 
-```
-lib/
-├── core/                 # Core utilities and constants
-├── data/
-│   ├── datasources/      # Data sources and API clients
-│   ├── models/          # Data models
-│   └── services/        # Business logic services
-│       ├── pdf_service.dart      # PDF text extraction
-│       └── gemini_service.dart   # Gemini API integration
-├── di/                  # Dependency injection
-├── domain/
-│   ├── entities/        # Domain entities
-│   ├── repositories/    # Repository interfaces
-│   └── usecases/       # Business use cases
-└── presentation/
-    ├── providers/       # State management
-    ├── screens/         # UI screens
-    │   └── pdf_upload_screen.dart
-    └── widgets/         # Reusable UI components
-```
+## 📋 Supported Technical Positions
 
-## Dependencies
+The app includes a comprehensive list of technical positions:
 
-- **flutter_riverpod**: State management
-- **get_it**: Dependency injection
-- **flutter_dotenv**: Environment variable management
-- **http**: HTTP client for API calls
-- **syncfusion_flutter_pdf**: PDF text extraction
-- **file_picker**: File selection
-- **url_launcher**: Gmail integration
-- **google_fonts**: Typography
+- Software Engineer
+- Frontend/Backend/Full Stack Developer
+- Mobile App Developer (iOS/Android/Flutter/React Native)
+- DevOps Engineer & SRE
+- Data Engineer & Data Scientist
+- Machine Learning & AI Engineer
+- Cloud Engineer (AWS/Azure/GCP)
+- Security Engineer & Cybersecurity Analyst
+- QA Engineer & Test Automation
+- Product Manager & Engineering Manager
+- UI/UX Designer & Technical Writer
+- And many more...
 
-## Privacy & Security
+## 🔧 Configuration
 
-- All PDF processing happens locally on your device
-- Only the PDF content is sent to Gemini API for analysis
-- No data is stored or logged on external servers
-- Your API key is kept secure in local environment variables
+### Environment Variables
+- `GEMINI_API_KEY`: Your Google Gemini API key
 
-## Contributing
+### API Configuration
+- **Base URL**: `https://generativelanguage.googleapis.com/v1beta`
+- **Model**: `gemini-1.5-flash`
+- **Temperature**: 0.7 (General) / 0.8 (Curated)
+- **Max Tokens**: 1024 (General) / 1500 (Curated)
+
+## 📱 Platform Support
+
+- ✅ Android
+- ✅ iOS
+- ✅ Web
+- ✅ macOS
+- ✅ Windows
+- ✅ Linux
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
+## 🆘 Support
 
-If you encounter any issues or have questions, please open an issue on GitHub.
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/your-repo/coldmail/issues) page
+2. Create a new issue with detailed information
+3. Include your Flutter version and device information
+
+## 🔄 Changelog
+
+### Version 1.0.0
+- ✨ Initial release with basic email generation
+- 🎯 Added company name and position input
+- 🔄 Implemented two template types (General/Curated)
+- 💾 Added local template storage
+- 📱 Created template management screen
+- 🔗 Direct Gmail integration
+- 🎨 Enhanced UI with modern design
+- 📋 Comprehensive technical position dropdown
 
 ---
 
-**Note**: Make sure to replace `your_actual_api_key_here` with your real Gemini API key in the `.env` file.
+**Made with ❤️ for job seekers everywhere**

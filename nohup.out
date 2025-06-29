@@ -18,3 +18,27 @@
 [26096:0619/121815.318139:ERROR:atom_cache.cc(229)] Add WM_CHANGE_STATE to kAtomsToCache
 [26096:0619/121957.293293:ERROR:browser_main_loop.cc(278)] GLib-GObject: ../glib/gobject/gsignal.c:2699: instance '0x3ec405205980' has no handler with id '2400'
 [26096:0619/122001.951623:ERROR:browser_main_loop.cc(278)] GLib-GObject: ../glib/gobject/gsignal.c:2699: instance '0x3ec405205640' has no handler with id '2711'
+[26096:0619/130939.865621:ERROR:browser_main_loop.cc(278)] GLib-GObject: ../glib/gobject/gsignal.c:2699: instance '0x3ec405207040' has no handler with id '2929'
+[91m[main 2025-06-19T10:24:08.805Z][0m CodeWindow: detected unresponsive
+[91m[main 2025-06-19T10:24:10.346Z][0m CodeWindow: recovered from unresponsive
+[91m[main 2025-06-19T10:24:10.375Z][0m CodeWindow unresponsive samples:
+<1> 
+    at Vp (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:48:25996)
+    at N3s.v (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:6626:17097)
+    at we.B (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:46:2398)
+    at we.fire (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:46:2617)
+    at _Ka.register (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:4220:40069)
+    at _zc.addStatus (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:4220:63210)
+    at hSa.$setLanguageStatus (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:4220:64417)
+    at uWs.S (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:492:13557)
+    at uWs.Q (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:492:13335)
+    at uWs.M (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:492:12423)
+    at uWs.L (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:492:11524)
+    at opt.value (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:492:10316)
+    at we.B (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:46:2398)
+    at we.fire (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:46:2617)
+    at mQe.fire (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:4222:10378)
+    at u.onmessage (vscode-file://vscode-app/tmp/.mount_cursorEvCOPF/usr/share/cursor/resources/app/out/vs/workbench/workbench.desktop.main.js:6679:12344)
+Total Samples: 1
+For full overview of the unresponsive period, capture cpu profile via https://aka.ms/vscode-tracing-cpu-profile
+[26096:0619/155540.123081:ERROR:browser_main_loop.cc(278)] GLib-GObject: ../glib/gobject/gsignal.c:2699: instance '0x3ec405206d00' has no handler with id '3208'

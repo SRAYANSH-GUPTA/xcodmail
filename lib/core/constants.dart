@@ -18,4 +18,58 @@ class AppConstants {
   
   // File Types
   static const List<String> supportedFileTypes = ['pdf'];
+
+  // Technical Positions and Job Titles
+  static const List<String> technicalPositions = [
+    'Software Engineer',
+    'Frontend Developer',
+    'Backend Developer',
+    'Full Stack Developer',
+    'Mobile App Developer',
+    'iOS Developer',
+    'Android Developer',
+    'Flutter Developer',
+    'React Native Developer',
+    'DevOps Engineer',
+    'Site Reliability Engineer (SRE)',
+    'Data Engineer',
+    'Data Scientist',
+    'Machine Learning Engineer',
+    'AI Engineer',
+    'Cloud Engineer',
+    'AWS Solutions Architect',
+    'Azure Developer',
+    'Google Cloud Engineer',
+    'System Administrator',
+    'Network Engineer',
+    'Security Engineer',
+    'Cybersecurity Analyst',
+    'QA Engineer',
+    'Test Automation Engineer',
+    'Product Manager',
+    'Technical Product Manager',
+    'Engineering Manager',
+    'Tech Lead',
+    'Software Architect',
+    'UI/UX Designer',
+    'UX Researcher',
+    'Technical Writer',
+    'Solutions Architect',
+    'Database Administrator',
+    'Blockchain Developer',
+    'Game Developer',
+    'Embedded Systems Engineer',
+    'Robotics Engineer',
+    'Computer Vision Engineer',
+    'NLP Engineer',
+    'Research Scientist',
+    'Technical Consultant',
+    'Software Consultant',
+    'Freelance Developer',
+    'Other (Custom)',
+  ];
+
+  // Email Template Types
+  static const String generalTemplate = 'General';
+  static const String curatedTemplate = 'Curated';
 } 

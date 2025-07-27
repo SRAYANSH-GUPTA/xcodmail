@@ -63,11 +63,16 @@ class _EmailSendScreenState extends State<EmailSendScreen> {
     final password = _passwordController.text.trim();
     final recipients = _recipientsController.text.split(',').map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
     final subject = _subjectController.text.trim();
-    final body = _bodyController.text;
+    String body = _bodyController.text;
     final attachments = _attachments;
 
-    if (sender.isEmpty || password.isEmpty || recipients.isEmpty || subject.isEmpty || body.isEmpty) {
-      _appendLog('Please fill all required fields.');
+    // If HTML file is uploaded, use its content as body
+    if (_htmlFile != null && _htmlFile!.bytes != null) {
+      body = String.fromCharCodes(_htmlFile!.bytes!);
+    }
+
+    if (sender.isEmpty || password.isEmpty || recipients.isEmpty || subject.isEmpty || (body.isEmpty)) {
+      _appendLog('Please fill all required fields. (Email body is required unless an HTML file is uploaded)');
       return;
     }
 

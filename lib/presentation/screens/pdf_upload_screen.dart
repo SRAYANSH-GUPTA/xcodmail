@@ -22,6 +22,7 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
   String? _generatedEmail;
   Map<String, String>? _keyInfo;
   bool _isGeneratingEmail = false;
+  String? _generatedPrompt; // Add this to state
   
   // New form fields
   final TextEditingController _companyController = TextEditingController();
@@ -150,6 +151,13 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
       dev.log('Error generating email in pdf_upload_screen: $e');
       _showErrorSnackBar('Error generating email: $e');
     }
+  }
+
+  Future<void> _generatePrompt() async {
+    if (_selectedFile == null) return;
+    setState(() {
+      _generatedPrompt = 'This is your generated prompt based on the uploaded resume.';
+    });
   }
 
   Future<void> _saveTemplate() async {
@@ -708,6 +716,53 @@ class _PdfUploadScreenState extends State<PdfUploadScreen> {
                         ],
                       ),
                     ),
+                  
+                    // Add Generate Prompt button
+                    const SizedBox(height: 16),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton.icon(
+                        onPressed: _generatePrompt,
+                        icon: const Icon(Icons.lightbulb_outline),
+                        label: Text(
+                          'Generate Prompt',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFFBBC05),
+                          foregroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          elevation: 2,
+                        ),
+                      ),
+                    ),
+                    if (_generatedPrompt != null) ...[
+                      const SizedBox(height: 16),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(16.0),
+                        decoration: BoxDecoration(
+                          color: Colors.yellow[50],
+                          borderRadius: BorderRadius.circular(12.0),
+                          border: Border.all(
+                            color: Colors.yellow.withOpacity(0.2),
+                          ),
+                        ),
+                        child: Text(
+                          _generatedPrompt!,
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ),
+                    ],
                   ],
                   
                   const SizedBox(height: 24),

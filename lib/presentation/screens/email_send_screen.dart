@@ -172,18 +172,18 @@ class _EmailSendScreenState extends State<EmailSendScreen> {
               ),
             ),
             const SizedBox(height: 12),
-            Row(
-              children: [
-                ElevatedButton.icon(
-                  onPressed: _pickHtmlFile,
-                  icon: const Icon(Icons.upload_file),
-                  label: const Text('Upload HTML'),
-                ),
-                const SizedBox(width: 12),
-                if (_htmlFile != null) Text(_htmlFile!.name),
-              ],
-            ),
-            const SizedBox(height: 12),
+            // Row(
+            //   children: [
+            //     ElevatedButton.icon(
+            //       onPressed: _pickHtmlFile,
+            //       icon: const Icon(Icons.upload_file),
+            //       label: const Text('Upload HTML'),
+            //     ),
+            //     const SizedBox(width: 12),
+            //     if (_htmlFile != null) Text(_htmlFile!.name),
+            //   ],
+            // ),
+            // const SizedBox(height: 12),
             TextField(
               controller: _bodyController,
               decoration: const InputDecoration(

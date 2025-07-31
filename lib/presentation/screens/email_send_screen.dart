@@ -3,6 +3,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
 import 'dart:io';
+import 'package:url_launcher/url_launcher.dart';
+import "package:flutter_dotenv/flutter_dotenv.dart";
 
 class EmailSendScreen extends StatefulWidget {
   const EmailSendScreen({super.key});
@@ -17,6 +19,7 @@ class _EmailSendScreenState extends State<EmailSendScreen> {
   final TextEditingController _recipientsController = TextEditingController();
   final TextEditingController _subjectController = TextEditingController();
   final TextEditingController _bodyController = TextEditingController();
+  final String appPasswordUrl = dotenv.env['APP_PASSWORD_URL'] ?? '';
 
   PlatformFile? _htmlFile;
   List<PlatformFile> _attachments = [];
@@ -57,6 +60,8 @@ class _EmailSendScreenState extends State<EmailSendScreen> {
       _log += message + '\n';
     });
   }
+
+ 
 
   void _sendEmails() async {
     final sender = _senderController.text.trim();
@@ -126,14 +131,28 @@ class _EmailSendScreenState extends State<EmailSendScreen> {
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 12),
-            TextField(
-              controller: _passwordController,
-              decoration: const InputDecoration(
-                labelText: 'Sender Password',
-                border: OutlineInputBorder(),
-              ),
-              obscureText: true,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _passwordController,
+                    decoration: const InputDecoration(
+                      labelText: 'App Id Password',
+                      border: OutlineInputBorder(),
+                    ),
+                    obscureText: true,
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.web),
+                  onPressed: () {
+                    launchUrl(Uri.parse(appPasswordUrl), mode: LaunchMode.externalApplication);
+                  },
+                ),
+              ],
             ),
+           
             const SizedBox(height: 12),
             TextField(
               controller: _recipientsController,

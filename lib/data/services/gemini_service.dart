@@ -300,7 +300,7 @@ Only include information that is explicitly mentioned in the document. If inform
           final Map<String, dynamic> jsonData = jsonDecode(responseText);
           return Map<String, String>.from(jsonData);
         } catch (e) {
-          // If JSON parsing fails, return default map with "Not specified" values
+          // If JSON parsing fails, return default map winitith "Not specified" values
           return {
             'full_name': 'Not specified',
             'email': 'Not specified',

@@ -52,7 +52,7 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^29.2.11
   
   # URL Launcher for Gmail
-  url_launcher: ^6.2.5
+  url_launcher: ^6.3.2
   
   # File Picker
   file_picker: ^10.2.0

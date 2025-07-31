@@ -85,7 +85,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.upload_file),
-            label: 'PDF Upload',
+            label: 'Create Resume',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
